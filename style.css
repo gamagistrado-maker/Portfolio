@@ -97,13 +97,28 @@ header {
     transform: translateY(-5px);
     color: gold;
     transform: translateY(-5px) scale(1.05);
-    text-shadow: 
-    0 0 10px gold, 
-    0 0 10px gold;
+  
+    
 }
 
+.navmenu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;          
+    width: 0%;             
+    height: 2px;           
+    background: gold;
+    border-radius: 2px;
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navmenu a:hover::after {
+    width: 100%;                       
+    box-shadow: 0 0 4px gold, 0 0 4px gold; 
+}
 .navmenu a:active {
-    color: orangered;
+    color: orange;
     transform: translateY(0) scale(0.98);
     text-shadow: none;
     transition: transform 0.1s, color 0.1s;
