@@ -113,7 +113,6 @@ header {
 
 .navmenu a:hover::after {
     width: 100%;                       
-    box-shadow: 0 0 4px gold, 0 0 4px gold; 
 }
 .navmenu a:active {
     color: orange;
