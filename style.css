@@ -24,6 +24,22 @@ body {
     background-attachment: fixed;
 }
 
+#page3 {
+    background-image: url('images/404.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#page4 {
+    background-image: url('images/404.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 /* Header */
 header {
     position: fixed;
@@ -71,20 +87,26 @@ header {
     transition: transform 0.65s, color 0.65s;
     font-size: 1rem;
     text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        -2px -2px 4px rgba(0, 0, 0, 0.8),
-        2px -2px 4px rgba(0, 0, 0, 0.8),
-        -2px 2px 4px rgba(0, 0, 0, 0.8);
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    -2px -2px 4px rgba(0, 0, 0, 0.8),
+    2px -2px 4px rgba(0, 0, 0, 0.8),
+    -2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .navmenu a:hover {
     transform: translateY(-5px);
     color: gold;
+    transform: translateY(-5px) scale(1.05);
+    text-shadow: 
+    0 0 10px gold, 
+    0 0 20px gold;
 }
 
 .navmenu a:active {
     color: orangered;
-    transition: none;
+    transform: translateY(0) scale(0.98);
+    text-shadow: none;
+    transition: transform 0.1s, color 0.1s;
 }
 
 /* Home section */
