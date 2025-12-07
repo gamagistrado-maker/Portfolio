@@ -99,7 +99,7 @@ header {
     transform: translateY(-5px) scale(1.05);
     text-shadow: 
     0 0 10px gold, 
-    0 0 20px gold;
+    0 0 10px gold;
 }
 
 .navmenu a:active {
