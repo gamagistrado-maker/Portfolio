@@ -238,7 +238,7 @@ header {
   z-index: -1;
 }
 
-/* About page */
+/* ------------ABOUT PAGE-------------- */ /* ------------ABOUT PAGE-------------- */ /* ------------ABOUT PAGE-------------- */
 
 .aboutme {
     text-align: center;
@@ -263,17 +263,24 @@ header {
 
 .profile {
     display: flex;
-    align-items: center;      
-    gap: 20px;                
+    align-items: center;
+    gap: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #424242, #000000);        
-    border-radius: 10px;
-    max-width: 800px;         
+ background: linear-gradient(
+        135deg, 
+        rgba(250, 250, 250, 0.2),  
+        rgba(240, 240, 240, 0.2)   
+); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    border-radius: 15px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
     margin: 3.5rem auto;
-    animation: slideUp 1.5s ease forwards;   
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-          
+    animation: slideUp 1.5s ease forwards;
+    
 }
+
 
 @keyframes slideUp {
     0% {
@@ -303,13 +310,75 @@ header {
 
 .profile-info h2 {
     margin-bottom: 0.625rem;
-    color:#F2F0EF;
+    color:#FAF9F6
     
 }
 
 .profile-info p {
-    color:#F2F0EF;
+    color:#FAF9F6
     line-height: 1.5;
+}
+
+.interest {
+    text-align: center;
+    font-family: "Nabla", sans-serif;
+    animation: slideDown 1.1s ease-out forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);     
+    }
+}
+
+
+.card-container { 
+    display: flex;
+    gap: 30px;
+    max-width: 3000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+
+.card {
+    flex: 1;
+    padding: 25px;
+    background: linear-gradient(
+        135deg, 
+        rgba(250, 250, 250, 0.2),  
+        rgba(240, 240, 240, 0.2)   
+); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(250, 250, 250, 0.3); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+    text-align: center;
+    animation: slideDown 1.1s ease-out forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);     
+    }
+}
+
+.card-title {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color:#E0E0E0;
+
 }
 
 .skills-header h1 {
@@ -386,21 +455,15 @@ header {
 .icon-grid img.csharp        { background: linear-gradient(135deg, #9c27b0, #4a148c); }
 .icon-grid img.cpp           { background: linear-gradient(135deg, #0033ff, #00aaff); }
 .icon-grid img.css           { background: linear-gradient(135deg, #00ffff, #00bfff, #008bff); }
-.icon-grid img.dart          { background: linear-gradient(135deg, #006666, #004d4d, #003333); }
-.icon-grid img.django        { background: linear-gradient(135deg, #00e5c3, #00bfa5, #008080); }
 .icon-grid img.docker        { background: linear-gradient(135deg, #87ceeb, #00bfff, #1e90ff); }
-.icon-grid img.flask         { background: linear-gradient(135deg, #fefefe, #f7f7f7, #efefef); }
 .icon-grid img.git           { background: linear-gradient(135deg, #ffa500, #ff8c00, #ff7f00); }
 .icon-grid img.github        { background: linear-gradient(135deg, #fefefe, #f7f7f7, #efefef); }
 .icon-grid img.go            { background: linear-gradient(135deg, #00ffff, #00bfff, #008bff); }
 .icon-grid img.html          { background: linear-gradient(135deg, #ffd8a6, #ffc080, #ffb266); }
 .icon-grid img.java          { background: linear-gradient(135deg, #FDEBD0, #FAD7A0, #AED6F1, #85C1E9); }
 .icon-grid img.javascript    { background: linear-gradient(135deg, #fff700, #ffea00, #ffd700); }
-.icon-grid img.jquery        { background: linear-gradient(135deg, #fefefe, #f7f7f7, #efefef); }
 .icon-grid img.laravel       { background: linear-gradient(135deg, #ff0000, #cc0000, #990000); }
-.icon-grid img.mongodb       { background: linear-gradient(135deg, #228B22, #196619, #0F3D0F); }
 .icon-grid img.mysql         { background: linear-gradient(135deg, #4B0082, #3A0066, #2E004D); }
-.icon-grid img.nodejs        { background: linear-gradient(135deg, #50C878, #2E8B57, #046307); }
 .icon-grid img.php           { background: linear-gradient(135deg, #F3E8FF, #E2C6FF, #D1AFFF); }
 .icon-grid img.postgresql    { background: linear-gradient(135deg, #E0F7FF, #B3E5FC, #81D4FA); }
 .icon-grid img.python        { background: linear-gradient(135deg, #fefefe, #f7f7f7, #efefef); }
@@ -409,5 +472,3 @@ header {
 .icon-grid img.ruby          { background: linear-gradient(135deg, #FFC1C1, #FFA6A6, #FF8C8C); }
 .icon-grid img.rust          { background: linear-gradient(135deg, #fefefe, #f7f7f7, #efefef); }
 .icon-grid img.typescript    { background: linear-gradient(135deg, #87CEEB, #00BFFF, #1E90FF); }
-.icon-grid img.vscode        { background: linear-gradient(135deg, #B0E0E6, #A2D5F2, #8ACBE7); }
-.icon-grid img.vuejs         { background: linear-gradient(135deg, #A0E7E5, #7FDADA, #5FCFCF); }
