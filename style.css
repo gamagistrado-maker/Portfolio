@@ -2,6 +2,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 
+:root {
+  /* Card styling variables */
+  --card-bg-gradient: linear-gradient(135deg, rgba(250, 250, 250, 0.2), rgba(240, 240, 240, 0.2));
+  --card-fallback-bg: rgba(250, 250, 250, 0.1);
+  --card-border: 1px solid rgba(250, 250, 250, 0.3);
+  --card-border-radius: 15px;
+  --card-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --card-padding: 1.5625rem; /* 25px in rem */
+  --blur-amount: 5px;
+  --transition-duration: 0.3s;
+  --animation-duration: 1.1s;
+}
+/* Keyframe animations */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 html {
   scroll-behavior: smooth; 
 }
@@ -138,16 +172,6 @@ header {
     animation: slideDown 1.1s ease-out forwards;
 }
 
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);     
-    }
-}
 
 /* Home text h3 */
 .home-text h3 {
@@ -158,16 +182,6 @@ header {
     animation: slideDown 1.1s ease-out forwards;
 }
 
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);     
-    }
-}
 
 .home-text h3::before {
     content: "";
@@ -185,31 +199,11 @@ header {
     animation: slideUp 1.1s ease-out forwards;
 }
 
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(10px); 
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);   
-    }
-}
 
 .home-btn {
     animation: slideUp 1.1s ease-out forwards; 
 }
 
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(10px); 
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);   
-    }
-}
 
 /* Buttons */
 .btn {
@@ -249,16 +243,6 @@ header {
     font-size: 2.5rem;   
 }
 
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(10px); 
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);   
-    }
-}
 
 /* Profile Card */
 .profile {
@@ -270,7 +254,7 @@ header {
         135deg, 
         rgba(250, 250, 250, 0.2),  
         rgba(240, 240, 240, 0.2)   
-); 
+    );
     backdrop-filter: blur(10px); 
     border: 1px solid rgba(250, 250, 250, 0.3);
     border-radius: 15px; 
@@ -278,20 +262,9 @@ header {
     max-width: 800px;
     margin: 3.5rem auto;
     animation: slideUp 1.5s ease forwards;
-    
 }
 
 
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(10px); 
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);   
-    }
-}
 
 .profile-image {
     width: 150px;             
@@ -315,7 +288,7 @@ header {
 }
 
 .profile-info p {
-    color:#FAF9F6
+    color:#FAF9F6;
     line-height: 1.5;
 }
 
@@ -325,16 +298,6 @@ header {
     animation: slideDown 1.1s ease-out forwards;
 }
 
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);     
-    }
-}
 
 .card-container { 
     display: flex;
@@ -346,38 +309,48 @@ header {
 
 
 .card {
-    flex: 1;
-    padding: 25px;
-    background: linear-gradient(
-        135deg, 
-        rgba(250, 250, 250, 0.2),  
-        rgba(240, 240, 240, 0.2)   
-); 
-    backdrop-filter: blur(10px); 
-    border: 1px solid rgba(250, 250, 250, 0.3); 
-    border-radius: 15px; 
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease; 
-    text-align: center;
-    animation: slideDown 1.1s ease-out forwards;
+  /* Layout */
+  flex: 1;
+  padding: var(--card-padding);
+  text-align: center;
+
+  /* Visual styling */
+  background: var(--card-fallback-bg); /* Fallback for unsupported browsers */
+  background: var(--card-bg-gradient);
+  -webkit-backdrop-filter: blur(var(--blur-amount)); /* Safari support */
+  backdrop-filter: blur(var(--blur-amount));
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
+
+  /* Interactions */
+  transition: transform var(--transition-duration) ease;
+  will-change: transform; /* Performance hint */
+
+  /* Animation */
+  animation: slideDown var(--animation-duration) ease-out forwards;
 }
 
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);     
-    }
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+    transition: none;
+  }
 }
 
 .card-title {
     margin-bottom: 1rem;
     font-weight: bold;
     color:#E0E0E0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
+.card-title .icon {
+  width: 20px;
+  height: 20px;
 }
 
 .skills-header h1 {
@@ -447,7 +420,7 @@ header {
 .icon-grid img:hover {
     transform: scale(1.2);
 }
-.icon-grid img.angular       { background: linear-gradient(135deg, #ff0000, #8b0000); }
+.icon-grid img.angular       { background: linear-gradient(180deg, #F0F0F0, #E0E0E0); }
 .icon-grid img.bash          { background: linear-gradient(135deg, #888888, #000000); }
 .icon-grid img.bootstrap     { background: linear-gradient(135deg, #6573c3, #0d1652); }
 .icon-grid img.c             { background: linear-gradient(135deg, #b0b0b0, #404040); }
