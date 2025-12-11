@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Nabla&family=Oswald:wght@200..700&display=swap');
+
 
 @keyframes slideDown {
   0% {
@@ -52,7 +53,7 @@ body {
 }
 
 #page3 {
-    background-image: url('images/404.jpg');
+    background-image: url('images/msi.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -78,6 +79,21 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2rem 8rem;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-family: sans-serif;
+    font-size: 0.85rem; 
+    color: #888; 
+    background-color: transparent; 
+}
+
+footer span {
+    margin: 0 8px; 
+    display: inline-block;
 }
 
 .logo {
@@ -239,7 +255,7 @@ header {
     padding: 1.5rem; 
     max-width: 50rem; 
     width: 90%; 
-    margin: 3.5rem auto; 
+    margin: 3.5rem auto 5rem; 
     background: linear-gradient(
         135deg, 
         rgba(255, 255, 255, 0.3),  
@@ -272,7 +288,7 @@ header {
 
 .profile-info h1 {
     color:#FAF9F6;
-    font-family: "Domine", serif;
+    font-family: "Oswald", serif;
     margin-bottom: 0.625rem;
 }
 
@@ -283,10 +299,19 @@ header {
 
 .interest {
     text-align: center;
-    font-family: "Nabla", sans-serif;
+    font-family: "Oswald", sans-serif;
     animation: slideDown 1.1s ease-out forwards;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
 }
 
+.interest img.arrow {
+    margin-top: 10px; 
+    height: 2rem;
+    width: 2rem;
+}
 
 .card-container { 
     display: flex;
@@ -302,8 +327,8 @@ header {
     text-align: center;
     background: rgba(250, 250, 250, 0.1); 
     background: linear-gradient(135deg, rgba(250, 250, 250, 0.2), rgba(240, 240, 240, 0.2));
-    -webkit-backdrop-filter: blur(5px); 
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(250, 250, 250, 0.3);
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -368,16 +393,125 @@ header {
     transform: scale(1.2);
 }
 
-.site-footer {
+/* --------PROJECTS-------- */ /* --------PROJECTS-------- */ /* --------PROJECTS-------- */ /* --------PROJECTS-------- */
+.myprojects {
     text-align: center;
-    padding: 20px 0;
-    font-family: sans-serif;
-    font-size: 0.85rem; 
-    color: #888; 
-    background-color: transparent; 
+    position: relative;
+    margin-top: 8rem;
+    font-family: "Bungee Spice", sans-serif;
+    animation: slideUp 1.1s ease forwards;   
+    font-size: 2.5rem;  
 }
 
-.site-footer span {
-    margin: 0 8px; 
-    display: inline-block;
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 300px 1fr; 
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* --- Content Section --- */
+.project-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-content h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.project-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* --- ICONS (Replaces text) --- */
+.tech-stack {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between icons */
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+}
+
+.tech-icon {
+  width: 24px;  /* Small fixed size */
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.8; /* Slightly faded until hover (optional) */
+}
+
+/* --- FLAT BUTTON (Smaller, No Click Effect) --- */
+.btn-project {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #3498db;
+  color: white;
+  
+  /* Compact Size */
+  padding: 0.5rem 1rem; 
+  font-size: 0.85rem;    
+  
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  
+  /* Removes default button look */
+  border: none;
+  box-shadow: none;
+  cursor: default; /* Optional: changes cursor to standard pointer */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 1fr; /* Stack vertically */
+    max-width: 450px; /* Limit width on phones */
+    margin: 0 auto;
+  }
+
+  .project-image {
+    height: 200px; /* Fixed height for image on top */
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+  }
 }
