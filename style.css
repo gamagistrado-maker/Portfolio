@@ -26,6 +26,17 @@
   }
 }
 
+@keyframes slideRight {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 html {
   scroll-behavior: smooth; 
 }
@@ -61,7 +72,7 @@ body {
 }
 
 #page4 {
-    background-image: url('images/404.jpg');
+    background-image: url('images/space.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -248,6 +259,14 @@ footer span {
     font-size: 2.5rem;   
 }
 
+.aboutme2 {
+    text-align: center;
+    position: relative;
+    margin-top: 1rem;
+    font-family: "Bungee Spice", sans-serif;
+    animation: slideUp 1.1s ease forwards;    
+}
+
 .profile {
     display: flex;
     align-items: center;
@@ -393,7 +412,7 @@ footer span {
     transform: scale(1.2);
 }
 
-/* --------PROJECTS-------- */ /* --------PROJECTS-------- */ /* --------PROJECTS-------- */ /* --------PROJECTS-------- */
+/* --------PROJECTS-------- */ /* --------PROJECTS-------- */ /* --------PROJECTS-------- */ /* --------PROJECTS-------- */ /* --------PROJECTS-------- */
 .myprojects {
     text-align: center;
     position: relative;
@@ -401,6 +420,14 @@ footer span {
     font-family: "Bungee Spice", sans-serif;
     animation: slideUp 1.1s ease forwards;   
     font-size: 2.5rem;  
+}
+
+.myprojects2 {
+    text-align: center;
+    position: relative;
+    margin-top: 1rem;
+    font-family: "Bungee Spice", sans-serif;
+    animation: slideUp 1.1s ease forwards;    
 }
 
 .projects-container {
@@ -413,7 +440,6 @@ footer span {
 }
 
 .project-card {
-  background-color: white;
   border-radius: 12px;
   overflow: hidden;
   display: grid;
@@ -421,6 +447,8 @@ footer span {
   border: 1px solid rgba(0,0,0,0.05);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1f1f1f;
+  animation: slideRight 1.1s ease-out forwards;
 }
 
 .project-image {
@@ -441,7 +469,6 @@ footer span {
   transform: scale(1.05);
 }
 
-/* --- Content Section --- */
 .project-content {
   padding: 2rem;
   display: flex;
@@ -450,68 +477,225 @@ footer span {
 }
 
 .project-content h3 {
-  color: #2c3e50;
+  color: #FAFAFA;
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
 .project-content p {
-  color: #666;
+  color: #FAFAFA;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-/* --- ICONS (Replaces text) --- */
 .tech-stack {
   display: flex;
   align-items: center;
-  gap: 12px; /* Space between icons */
+  gap: 12px; 
   margin-top: auto;
   margin-bottom: 1.5rem;
 }
 
 .tech-icon {
-  width: 24px;  /* Small fixed size */
+  width: 24px;  
   height: 24px;
   object-fit: contain;
-  opacity: 0.8; /* Slightly faded until hover (optional) */
+  opacity: 0.8; 
 }
 
-/* --- FLAT BUTTON (Smaller, No Click Effect) --- */
 .btn-project {
   display: inline-block;
   align-self: flex-start;
   background-color: #3498db;
   color: white;
-  
-  /* Compact Size */
   padding: 0.5rem 1rem; 
   font-size: 0.85rem;    
-  
   border-radius: 4px;
   font-weight: 600;
   text-decoration: none;
-  
-  /* Removes default button look */
   border: none;
   box-shadow: none;
-  cursor: default; /* Optional: changes cursor to standard pointer */
+  cursor: default; 
 }
 
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-  .project-card {
-    grid-template-columns: 1fr; /* Stack vertically */
-    max-width: 450px; /* Limit width on phones */
-    margin: 0 auto;
-  }
+/* --------Contacts-------- */ /* --------Contacts-------- */ /* --------Contacts-------- */ /* --------Contacts-------- */ /* --------Contacts-------- */
 
-  .project-image {
-    height: 200px; /* Fixed height for image on top */
+.mycontacts {
+    text-align: center;
+    position: relative;
+    margin-top: 8rem;
+    font-family: "Bungee Spice", sans-serif;
+    animation: slideUp 1.1s ease forwards;   
+    font-size: 2.5rem;   
+}
+
+.mycontacts2 {
+    text-align: center;
+    position: relative;
+    margin-top: 1rem;
+    font-family: "Bungee Spice", sans-serif;
+    animation: slideUp 1.1s ease forwards;    
+}
+
+.contact-section {
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; 
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #1e293b; 
+  border-radius: 20px;
+  overflow: hidden; 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); 
+  border: 1px solid #334155;
+  animation: slideUp 1.1s ease forwards;
+}
+
+.card-column {
+  padding: 3.5rem;
+}
+
+.info-side {
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #334155;
+}
+
+.info-side h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-item {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item .label {
+  color: #38bdf8; 
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.info-item .value {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.info-item a.value:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.form-side {
+  background-color: #1e293b;
+}
+
+.form-side h2 {
+  color: #f1f5f9;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
+
+/* Input Styling */
+.form-group input,
+.form-group textarea {
+  background-color: #334155; 
+  color: #fff;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background-color: #1e293b;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button Styling */
+.btn-submit {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 900px) {
+  .contact-card {
+    grid-template-columns: 1fr; 
   }
   
-  .project-content {
-    padding: 1.5rem;
+  .info-side {
+    border-right: none;
+    border-bottom: 1px solid #334155;
+    padding: 2.5rem;
+  }
+  
+  .form-side {
+    padding: 2.5rem;
+  }
+  
+  body {
+    align-items: flex-start; 
   }
 }
