@@ -630,7 +630,6 @@ footer span {
   color: #cbd5e1;
 }
 
-/* Input Styling */
 .form-group input,
 .form-group textarea {
   background-color: #334155; 
@@ -677,24 +676,4 @@ footer span {
 .btn-submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
-}
-
-@media (max-width: 900px) {
-  .contact-card {
-    grid-template-columns: 1fr; 
-  }
-  
-  .info-side {
-    border-right: none;
-    border-bottom: 1px solid #334155;
-    padding: 2.5rem;
-  }
-  
-  .form-side {
-    padding: 2.5rem;
-  }
-  
-  body {
-    align-items: flex-start; 
-  }
 }
